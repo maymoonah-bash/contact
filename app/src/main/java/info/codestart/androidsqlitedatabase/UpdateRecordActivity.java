@@ -75,39 +75,45 @@ public class UpdateRecordActivity extends AppCompatActivity {
         String image = mImageEditText.getText().toString().trim();
 
 
-        if(name.isEmpty()){
-            //error name is empty
-            Toast.makeText(this, "You must enter a name", Toast.LENGTH_SHORT).show();
-        }
+            if (name.isEmpty()) {
+                //error name is empty
+                Toast.makeText(this, "You must enter a name", Toast.LENGTH_SHORT).show();
+            }
 
-        if(age.isEmpty()){
-            //error name is empty
-            Toast.makeText(this, "You must enter an age", Toast.LENGTH_SHORT).show();
-        }
+            if (age.isEmpty()) {
+                //error name is empty
+                Toast.makeText(this, "You must enter an age", Toast.LENGTH_SHORT).show();
+            }
 
-        if(occupation.isEmpty()){
-            //error name is empty
-            Toast.makeText(this, "You must enter an occupation", Toast.LENGTH_SHORT).show();
-        }
+            if (occupation.isEmpty()) {
+                //error name is empty
+                Toast.makeText(this, "You must enter an occupation", Toast.LENGTH_SHORT).show();
+            }
 
-        if(image.isEmpty()){
-            //error name is empty
-            Toast.makeText(this, "You must enter an image link", Toast.LENGTH_SHORT).show();
-        }
+            if (image.isEmpty()) {
+                //error name is empty
+                Toast.makeText(this, "You must enter an image link", Toast.LENGTH_SHORT).show();
+            }
+
 
         //create updated person
-        Person updatedPerson = new Person(name, age, occupation, image);
-
+        //  Person updatedPerson = new Person(name, age, occupation, image);
         //call dbhelper update
-        dbHelper.updatePersonRecord(receivedPersonId, this, updatedPerson);
-
+        //  dbHelper.updatePersonRecord(receivedPersonId, this, updatedPerson);
         //finally redirect back home
         // NOTE you can implement an sqlite callback then redirect on success delete
-        goBackHome();
 
+
+        if (!name.isEmpty() && !age.isEmpty() && !occupation.isEmpty() && !image.isEmpty()) {
+
+            Person updatedPerson = new Person(name, age, occupation, image);
+            dbHelper.updatePersonRecord(receivedPersonId, this, updatedPerson);
+            goBackHome();
+        }
     }
 
     private void goBackHome(){
         startActivity(new Intent(this, MainActivity.class));
     }
+
 }

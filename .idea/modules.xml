@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android-SQLite-and-Recyclerview.iml" filepath="$PROJECT_DIR$/Android-SQLite-and-Recyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/contact.iml" filepath="$PROJECT_DIR$/.idea/modules/contact.iml" group="contact" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/contact-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/contact-app.iml" group="contact/app" />
     </modules>
   </component>
 </project>
